@@ -15,7 +15,7 @@ export default {
 <style lang="stylus" scoped>
   @import "~@/assets/styles/varibles.styl"
   .header
-    line-height :.8rem
+    line-height :1rem
     display :flex
     background:$bgColor
     color :#ffffff
@@ -29,9 +29,9 @@ export default {
         text-align center
     .h-input
       flex :1
-      height :.6rem
+      height :.7rem
       line-height .62rem
-      margin-top :.12rem
+      margin-top :.15rem
       padding-left :.2rem
       margin-left: .2rem;
       background-color :#ffffff

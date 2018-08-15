@@ -82,7 +82,7 @@ export default {
   @import "../../../assets/styles/mixins.styl"
     .icons >>> .swiper-container
       height 0
-      padding-bottom 49.5%
+      padding-bottom 50%
       background-color #333333
     .icon
       position: relative
@@ -93,7 +93,7 @@ export default {
       margin .2% .02%
       background-color: #333339
       padding-bottom 24.52%
-      border-radius 0.6rem
+      border-radius 0.3rem
       .icon-img
         position absolute
         top:0
@@ -110,8 +110,8 @@ export default {
         position absolute
         left 0
         right 0
-        width 60%
-        padding-left 20%
+        width 80%
+        padding-left 10%
         bottom .04rem
         height .44rem
         line-height .44rem
