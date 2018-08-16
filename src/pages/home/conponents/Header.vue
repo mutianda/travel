@@ -2,7 +2,9 @@
   <div class="header">
   <div class="h-left"><span class="iconfont back-icon">&#xe624;</span></div>
   <div class="h-input"><span class="iconfont search-icon">&#xe632;</span>景点/酒店/机票</div>
-  <div class="h-right">{{this.city}}<span class="iconfont down-icon">&#xe62b;</span></div>
+ <router-link to="/City">
+   <div class="h-right">{{this.city}}<span class="iconfont down-icon">&#xe62b;</span></div>
+ </router-link>
   </div>
 </template>
 
@@ -47,6 +49,7 @@ export default {
       text-align :center
       display inline-block
       font-size .3rem
+      color #cacaca
       .down-icon
         font-size .35rem
         padding-left .1rem
