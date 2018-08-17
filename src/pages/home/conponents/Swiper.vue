@@ -61,7 +61,7 @@ export default {
     overflow hidden
     width 100%
     height 0
-    padding-bottom 27.5%
+    padding-bottom 27.6%
     .swiper-img
       width 100%
       border #333333 solid .01rem

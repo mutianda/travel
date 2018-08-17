@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <input class="sinput" type="text" placeholder="  please enter the key words">
+    <input class="sinput " type="text" placeholder="  please enter the key words"/>
   </div>
 
 </template>
@@ -22,7 +22,7 @@ export default {
       margin-left 10%
       line-height .6rem
       font-size .35rem
-      margin-top .11rem
+      margin-top .15rem
       text-align center
-      border-radius .1rem
+      border-radius .08rem
 </style>
