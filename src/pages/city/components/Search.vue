@@ -3,10 +3,10 @@
     <div class="search">
       <input v-model="keyword" class="sinput " type="text" placeholder="  please enter the key words"/>
     </div>
-    <div class="search-con" ref="search" v-show="this.keyword">
+    <div class="search-con" ref="search" v-show="keyword">
       <ul>
-        <li class="searchitem" v-for="item of list" :key="item.id" >
-          {{item.name}}
+        <li class="searchitem" v-for="item of list" :key="item.id"
+            @click="handlecityclick(item.name)">{{item.name}}
         </li>
         <li class="searchitem" v-show="haslist">
           没有匹配的数据
@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
@@ -28,6 +29,14 @@ export default {
       list: [],
       timer: null
     }
+  },
+  methods: {
+    handlecityclick (city) {
+      // this.$store.dispatch('changecity', city)
+      this.changecity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changecity'])
   },
   computed: {
     haslist () {

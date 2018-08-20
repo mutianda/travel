@@ -9,11 +9,16 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['doublecity'])
   }
+  // props: {
+  //   city: String
+  // }
 }
 </script>
 
@@ -29,8 +34,9 @@ export default {
       float :left
       text-align center
       display inline-block
+      padding-right .2rem
       .back-icon
-        font-size .3rem
+        font-size .35rem
         text-align center
     .h-input
       flex :1
@@ -44,13 +50,15 @@ export default {
       color darkgray
       display inline-block
     .h-right
-      width :1.24rem
+      /*width :1.24rem*/
       float :right
+      line-height .62rem
       text-align :center
       display inline-block
-      font-size .3rem
+      font-size .33rem
       color #cacaca
+      padding 0.15rem .15rem
       .down-icon
         font-size .35rem
-        padding-left .1rem
+        padding-left .12rem
 </style>
