@@ -21,7 +21,11 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item,key) of cities" :key="key">
+      <div class="area"
+           v-for="(item,key) of cities"
+           :key="key"
+           :ref="key"
+      >
         <div class="title border-topbottom">
           {{key}}
         </div>
@@ -41,10 +45,19 @@ export default {
   name: 'CityList',
   props: {
     hotlist: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
@@ -57,8 +70,7 @@ export default {
 
   .boder-bottem
     &:before
-      border-color #888
-
+      border-color #eee
   .list
     position absolute
     top 1.77rem
@@ -79,7 +91,7 @@ export default {
       background-color #eee
       .buttonwrapper
         float left
-        width 33.33%
+        width 25%
         .button
           line-height .5rem
           padding .1rem 0rem
@@ -98,5 +110,6 @@ export default {
         line-height .76rem
         padding-left 5%
         color #000
-        font-size .4rem
+        font-size .36rem
+        border-bottom  #dadaea solid .01rem
 </style>
