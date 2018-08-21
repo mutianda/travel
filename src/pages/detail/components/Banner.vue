@@ -46,7 +46,6 @@ export default {
         // this.city = data.city
         this.gallaryImgs = data.gallaryImgs
         this.sightName = data.sightName
-        this.recommendList = data.recommendList
         this.bannerImg = data.bannerImg
       }
     },
