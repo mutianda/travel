@@ -4,7 +4,7 @@
     <div class="wrapper">
       <swiper :options="swiperOption" >
         <!-- slides -->
-        <swiper-slide data-swiper-autoplay="2000" v-for="(item,index) of imgs" :key="index" >
+        <swiper-slide  v-for="(item,index) of imgs" :key="index" >
           <img class="gallary-img" :src="item"/>
         </swiper-slide>
         <!--<swiper-slide data-swiper-autoplay="2000" >-->
@@ -37,12 +37,12 @@ export default {
         pagination: '.swiper-pagination',
         loop: true,
         speed: 1000,
-        autoplay: 2000,
         delay: 0.2,
+        autoplay: 2000,
         autoplayDisableOnInteraction: false,
         paginationType: 'fraction',
-        observeParents: true,
-        observe: true
+        observer: true,
+        observeParents: true
       }
     }
   },
