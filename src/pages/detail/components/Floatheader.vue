@@ -70,6 +70,7 @@ export default {
     top: 0
     left 0
     right 0
+    z-index 5
     overflow hidden
     text-align center
     background-color black
