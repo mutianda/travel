@@ -4,5 +4,11 @@ export default {
     try {
       localStorage.city = city
     } catch (e) {}
+  },
+  changebanner (state, banner) {
+    state.banner = banner
+    try {
+      localStorage.banner = banner
+    } catch (e) {}
   }
 }

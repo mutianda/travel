@@ -1,21 +1,21 @@
 <template>
   <div class="header">
     <router-link to="/">
-    <div class="h-left" ><span class="iconfont back-icon">&#xe624;</span></div>
+    <div class="h-left" ><span class="iconfont back-icon"></span></div>
     </router-link>
+    <div class="conname">{{this.banner}}</div>
     <router-link to="/City">
       <div class="h-right">{{this.city}}<span class="iconfont down-icon">&#xe62b;</span></div>
     </router-link>
   </div>
 </template>
-
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'DetailHeader',
   computed: {
     ...mapState(['city']),
-    ...mapGetters(['doublecity'])
+    ...mapState(['banner'])
   }
   // props: {
   //   city: String
@@ -39,6 +39,18 @@ export default {
       .back-icon
         font-size .35rem
         text-align center
+    .conname
+      flex :1
+      height :.7rem
+      line-height .62rem
+      margin-top :.15rem
+      padding-left :.2rem
+      margin-left: .2rem;
+      text-align center
+      font-size .36rem
+      border-radius :.1rem
+      color darkgray
+      display inline-block
     .h-input
       flex :1
       height :.7rem

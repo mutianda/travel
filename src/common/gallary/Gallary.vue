@@ -1,14 +1,15 @@
 <template>
-  <div class="container" @click="handleGallaryHidden">
+  <div class="container" @click="handleGallaryHidden" >
     <div class="back"><span class="iconfont back-icon">&#xe624;</span></div>
     <div class="wrapper">
       <swiper :options="swiperOption" >
         <!-- slides -->
-        <swiper-slide  v-for="(item,index) of imgs" :key="index" >
-          <img class="gallary-img" :src="item"/></swiper-slide>
-        <swiper-slide data-swiper-autoplay="2000" >
-          <img class="gallary-img" src="http://img1.qunarzz.com/sight/p0/1706/9b/9b6ce141d1a23b30a3.img.jpg_r_800x800_24dbd8cb.jpg"
-          /></swiper-slide>
+        <swiper-slide data-swiper-autoplay="2000" v-for="(item,index) of imgs" :key="index" >
+          <img class="gallary-img" :src="item"/>
+        </swiper-slide>
+        <!--<swiper-slide data-swiper-autoplay="2000" >-->
+          <!--<img class="gallary-img" src="http://img1.qunarzz.com/sight/p0/1706/9b/9b6ce141d1a23b30a3.img.jpg_r_800x800_24dbd8cb.jpg"-->
+          <!--/></swiper-slide>-->
         <!-- Optional controls -->
         <div class="swiper-pagination"  slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
@@ -42,8 +43,7 @@ export default {
         paginationType: 'fraction',
         observeParents: true,
         observe: true
-      },
-      hideGallary: true
+      }
     }
   },
   methods: {
@@ -81,9 +81,8 @@ export default {
       width 100%
       height 0
       padding-bottom 78%
-      background-color white
+      background-color #000
       .gallary-img
-        height 100%
         width 100%
       .swiper-pagination
         color white

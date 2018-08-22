@@ -5,59 +5,40 @@
         class="banner-img"
         :src='bannerImg'/>
       <div class="banner-info">
-        <div class="banner-title">{{this.sightName}}</div>
+        <div class="banner-title">{{sightName}}</div>
         <div class="banner-num"><span class="iconfont banner-icon">&#xe692;</span>39</div>
       </div>
     </div>
-    <common-gallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
 </template>
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
-import axios from 'axios'
+
 export default {
   name: 'Banner',
+  props: {
+    bannerImg: String,
+    sightName: String,
+    gallaryImgs: Array
+  },
   data () {
     return {
-      imgs: [
-        'http://img1.qunarzz.com/sight/p0/1706/9b/9b6ce141d1a23b30a3.img.jpg_r_800x800_24dbd8cb.jpg',
-        'http://img1.qunarzz.com/sight/p0/1706/9b/9b6ce141d1a23b30a3.img.jpg_r_800x800_24dbd8cb.jpg',
-        'http://img1.qunarzz.com/sight/p0/1706/40/403185fe8b31987da3.img.jpg_r_800x800_a6029998.jpg'
-      ],
-      showGallary: false,
-      gallaryImgs: [],
-      sightName: '',
-      bannerImg: ''
+      imgs: [],
+      showGallary: false
     }
   },
   components: {
     CommonGallary
   },
   methods: {
-    getDetailInfo () {
-      axios.get('/api/detail.json')
-        .then(this.getDetailInfoSucc)
-    },
-    getDetailInfoSucc (res) {
-      res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        // this.city = data.city
-        this.gallaryImgs = data.gallaryImgs
-        this.sightName = data.sightName
-        this.bannerImg = data.bannerImg
-      }
-    },
     handleGallaryClick () {
       this.showGallary = true
     },
     handleGallaryClose () {
       this.showGallary = false
     }
-  },
-  mounted () {
-    this.getDetailInfo()
   }
 }
 </script>

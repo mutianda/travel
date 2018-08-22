@@ -7,7 +7,8 @@
         v-for="item of recommendList"
         :key="item.id"
         :to= "'/detail/' + item.id"
-        >
+        @click="handlebannerclick(item.title)"
+      >
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl"/>
         </div>
@@ -23,12 +24,20 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'HomeRecommend',
   props: {
     recommendList: {
       type: Array
     }
+  },
+  methods: {
+    handlebannerclick (banner) {
+      // this.$store.dispatch('changecity', city)
+      this.changebanner(banner)
+    },
+    ...mapMutations(['changebanner'])
   }
 }
 </script>
